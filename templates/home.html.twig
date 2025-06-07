@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="jumbotron bg-dark text-white mb-4 p-4 rounded">
+        <h1 class="display-4">Welcome to Training Courses</h1>
+        <p class="lead">Enhance your skills with our professional training courses.</p>
+        <hr class="my-4 border-secondary">
+        <p>Browse our catalog or search for specific topics to find the perfect course for you.</p>
+        <div class="mt-4">
+            <a class="btn btn-primary btn-lg" href="/courses" role="button">View All Courses</a>
+            <a class="btn btn-outline-primary btn-lg ms-2" href="/search" role="button">Search Courses</a>
+        </div>
+    </div>
+
+    <h2 class="mb-4">Promoted Courses</h2>
+
+    {% if promotedCourses is empty %}
+        <div class="alert alert-info">
+            No promoted courses available at the moment.
+        </div>
+    {% else %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for course in promotedCourses %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">{{ course.title }}</h5>
+                            <span class="badge badge-promoted">Promoted</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ course.description }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/register/{{ course.id }}" class="btn btn-primary">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

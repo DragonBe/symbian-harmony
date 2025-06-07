@@ -1,0 +1,86 @@
+/* Custom styles for Training Courses application */
+
+/* Orange accent color for links */
+a {
+    color: #ff8c00;
+}
+
+a:hover {
+    color: #ffa500;
+}
+
+/* Orange accent color for buttons */
+.btn-primary {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #ffa500 !important;
+    border-color: #ffa500 !important;
+}
+
+.btn-outline-primary {
+    color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background-color: #ff8c00 !important;
+    border-color: #ff8c00 !important;
+}
+
+/* Course cards */
+.card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+.card-header {
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+
+.card-footer {
+    background-color: #333;
+    border-top: 1px solid #444;
+}
+
+/* Promoted course badge */
+.badge-promoted {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+/* Form styling */
+.form-control, .form-select {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #333;
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
+    color: #fff;
+}
+
+/* Table styling */
+.table {
+    color: #fff;
+}
+
+.table-dark {
+    --bs-table-bg: #2a2a2a;
+    --bs-table-border-color: #444;
+}
+
+/* Active nav links */
+.nav-link.active {
+    color: #ff8c00 !important;
+}

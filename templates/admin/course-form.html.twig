@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>{{ isEdit ? 'Edit Course' : 'Add New Course' }}</h1>
+        <a href="/admin/courses" class="btn btn-outline-primary">Back to Courses</a>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <form action="{{ isEdit ? '/admin/courses/edit/' ~ course.id : '/admin/courses/add' }}" method="post">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Course Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ course.title|default('') }}" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Course Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="5" required>{{ course.description|default('') }}</textarea>
+                </div>
+                
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="is_promoted" name="is_promoted" value="1" {% if course is defined and course.isPromoted %}checked{% endif %}>
+                    <label class="form-check-label" for="is_promoted">
+                        Promoted Course
+                    </label>
+                    <div class="form-text">Promoted courses are featured on the home page.</div>
+                </div>
+                
+                {% if isEdit %}
+                    <div class="alert alert-info mb-3">
+                        <strong>Note:</strong> To archive this course, use the Archive button on the courses list page.
+                    </div>
+                {% endif %}
+                
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">{{ isEdit ? 'Update Course' : 'Add Course' }}</button>
+                    <a href="/admin/courses" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1 class="mb-4">Admin Dashboard</h1>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">Manage Courses</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Add, edit, or archive training courses.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/admin/courses" class="btn btn-primary">Manage Courses</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">View Website</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">View the public-facing website.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/" class="btn btn-primary">Go to Website</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">Quick Add Course</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Quickly add a new training course.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/admin/courses/add" class="btn btn-primary">Add Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <h2 class="mb-3">System Information</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>PHP Version:</strong> {{ constant('PHP_VERSION') }}</p>
+                        <p><strong>Server:</strong> {{ app.request.server.get('SERVER_SOFTWARE') }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Date:</strong> {{ "now"|date("F j, Y") }}</p>
+                        <p><strong>Time:</strong> {{ "now"|date("H:i:s") }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
