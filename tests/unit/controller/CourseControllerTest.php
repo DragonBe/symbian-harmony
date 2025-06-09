@@ -11,6 +11,9 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 
+/**
+ * @coversClass \App\Controller\CourseController
+ */
 class CourseControllerTest extends TestCase
 {
     private $twig;

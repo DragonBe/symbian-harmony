@@ -9,6 +9,9 @@ use PDO;
 use PDOStatement;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @coversClass \App\Repository\CourseRepository
+ */
 class CourseRepositoryTest extends TestCase
 {
     private $pdo;
