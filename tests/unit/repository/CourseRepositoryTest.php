@@ -7,11 +7,10 @@ use App\Model\Course;
 use App\Repository\CourseRepository;
 use PDO;
 use PDOStatement;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @coversClass \App\Repository\CourseRepository
- */
+#[CoversClass(CourseRepository::class)]
 class CourseRepositoryTest extends TestCase
 {
     private $pdo;

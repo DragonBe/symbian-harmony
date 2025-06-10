@@ -4,11 +4,10 @@ declare(strict_types=1);
 namespace Tests\Unit\Model;
 
 use App\Model\Course;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @coversClass \App\Model\Course
- */
+#[CoversClass(Course::class)]
 class CourseTest extends TestCase
 {
     public function testCreateMethodReturnsNewCourseInstance(): void

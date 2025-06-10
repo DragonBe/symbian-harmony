@@ -5,14 +5,14 @@ namespace Tests\Unit\Controller;
 
 use App\Controller\HomeController;
 use App\Repository\CourseRepositoryInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 
-/**
- * @coversClass \App\Controller\HomeController
- */
+#[CoversClass(HomeController::class)]
 class HomeControllerTest extends TestCase
 {
     private $twig;
@@ -31,6 +31,7 @@ class HomeControllerTest extends TestCase
         $this->homeController = new HomeController($this->twig, $this->courseRepository);
     }
 
+    #[Test]
     public function testHomeMethodCallsRepositoryAndRendersTemplate(): void
     {
         // Mock the repository to return some promoted courses

@@ -6,14 +6,13 @@ namespace Tests\Unit\Controller;
 use App\Controller\AdminController;
 use App\Model\Course;
 use App\Repository\CourseRepositoryInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 
-/**
- * @coversClass \App\Controller\AdminController
- */
+#[CoversClass(AdminController::class)]
 class AdminControllerTest extends TestCase
 {
     private $twig;
