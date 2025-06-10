@@ -13,6 +13,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 
 #[CoversClass(AdminController::class)]
+#[CoversClass(Course::class)]
 class AdminControllerTest extends TestCase
 {
     private $twig;

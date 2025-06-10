@@ -11,6 +11,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(CourseRepository::class)]
+#[CoversClass(Course::class)]
 class CourseRepositoryTest extends TestCase
 {
     private $pdo;
